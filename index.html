@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Irma & Samuel — Nuestra Boda</title>
+
+  <!-- TIPOGRAFÍAS ELEGANTES -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    /* ==========================================
+       CONFIGURACIÓN GENERAL
+    ========================================== */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #f6f5f2;
+      color: #282828;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+
+    /* ==========================================
+       PORTADA
+    ========================================== */
+
+    .portada {
+      width: 100%;
+      height: 100vh;
+      min-height: 650px;
+
+      background:
+        linear-gradient(
+          rgba(0, 0, 0, 0.28),
+          rgba(0, 0, 0, 0.28)
+        ),
+        url("portada.JPG");
+
+      background-size: cover;
+      background-position: center;
+
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+
+      text-align: center;
+      color: white;
+
+      padding: 80px 20px 30px;
+    }
+
+    .portada-contenido {
+      width: 100%;
+      max-width: 1100px;
+    }
+
+    .frase {
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+    }
+
+    .nombres {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(75px, 11vw, 150px);
+      font-weight: 300;
+      line-height: 0.9;
+      margin-bottom: 35px;
+    }
+
+    .fecha {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 17px;
+      font-weight: 300;
+      letter-spacing: 8px;
+    }
+
+
+    /* ==========================================
+       SECCIONES GENERALES
+    ========================================== */
+
+    section {
+      padding: 110px 25px;
+    }
+
+    .titulo-grande {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(55px, 7vw, 90px);
+      font-weight: 400;
+      line-height: 1;
+      text-align: center;
+    }
+
+    .linea {
+      width: 80px;
+      height: 1px;
+      background: #777;
+      margin: 40px auto;
+      opacity: 0.6;
+    }
+
+
+    /* ==========================================
+       INTRODUCCIÓN
+    ========================================== */
+
+    .introduccion {
+      background: #f6f5f2;
+      text-align: center;
+    }
+
+    .introduccion-texto {
+      max-width: 700px;
+      margin: 40px auto 0;
+
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 27px;
+      line-height: 1.65;
+      font-weight: 400;
+    }
+
+
+    /* ==========================================
+       DETALLES
+    ========================================== */
+
+    .detalles {
+      background: white;
+      text-align: center;
+    }
+
+    .detalles-intro {
+      max-width: 700px;
+      margin: 25px auto 0;
+      color: #777;
+      line-height: 1.8;
+      font-size: 14px;
+    }
+
+    .lista-detalles {
+      max-width: 720px;
+      margin: 0 auto;
+      list-style: none;
+    }
+
+    .lista-detalles li {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      line-height: 1.25;
+      padding: 28px 0;
+    }
+
+    .lista-detalles li:not(:last-child) {
+      border-bottom: 1px solid #e5e2dc;
+    }
+
+    .detalle-pequeno {
+      display: block;
+      margin-top: 8px;
+
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      line-height: 1.6;
+      letter-spacing: 1px;
+      color: #777;
+    }
+
+
+    /* ==========================================
+       CEREMONIA Y RECEPCIÓN
+    ========================================== */
+
+    .eventos {
+      background: #f1f0ed;
+    }
+
+    .eventos-contenedor {
+      max-width: 1200px;
+      margin: auto;
+
+      display: grid;
+      grid-template-columns: 220px 1fr 1fr 220px;
+
+      align-items: center;
+      gap: 35px;
+    }
+
+    .foto-evento {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .evento {
+      text-align: center;
+    }
+
+    .evento h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(52px, 6vw, 75px);
+      font-weight: 400;
+      line-height: 1;
+      margin-bottom: 15px;
+    }
+
+    .hora {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 30px;
+      margin-bottom: 22px;
+    }
+
+    .direccion {
+      font-size: 13px;
+      color: #777;
+      line-height: 1.9;
+      margin-bottom: 25px;
+    }
+
+    .mapa {
+      color: #333;
+      text-decoration: none;
+      border-bottom: 1px solid #333;
+
+      padding-bottom: 4px;
+
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+
+    .mapa:hover {
+      opacity: 0.55;
+    }
+
+
+    /* ==========================================
+       REGALOS
+    ========================================== */
+
+    .regalos {
+      background: white;
+      text-align: center;
+    }
+
+    .regalos-texto {
+      max-width: 650px;
+      margin: 30px auto 35px;
+
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 25px;
+      line-height: 1.6;
+    }
+
+    .boton-regalos {
+      display: inline-block;
+
+      padding: 16px 32px;
+
+      border: 1px solid #333;
+
+      color: #333;
+      text-decoration: none;
+
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+
+      transition: 0.3s;
+    }
+
+    .boton-regalos:hover {
+      background: #333;
+      color: white;
+    }
+
+
+    /* ==========================================
+       MENSAJE FINAL
+    ========================================== */
+
+    .final {
+      min-height: 70vh;
+
+      background:
+        linear-gradient(
+          rgba(0,0,0,0.35),
+          rgba(0,0,0,0.35)
+        ),
+        url("portada.JPG");
+
+      background-size: cover;
+      background-position: center;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: white;
+      text-align: center;
+    }
+
+    .final h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(65px, 9vw, 110px);
+      font-weight: 300;
+      line-height: 0.9;
+      margin-bottom: 28px;
+    }
+
+    .final p {
+      font-size: 12px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+    }
+
+
+    /* ==========================================
+       CELULARES
+    ========================================== */
+
+    @media (max-width: 850px) {
+
+      section {
+        padding: 80px 22px;
+      }
+
+      .portada {
+        height: 100svh;
+        min-height: 620px;
+        padding-top: 80px;
+        background-position: center;
+      }
+
+      .frase {
+        font-size: 10px;
+        letter-spacing: 2px;
+      }
+
+      .nombres {
+        font-size: 70px;
+      }
+
+      .fecha {
+        font-size: 12px;
+        letter-spacing: 5px;
+      }
+
+      .introduccion-texto {
+        font-size: 23px;
+      }
+
+      .lista-detalles li {
+        font-size: 24px;
+      }
+
+      .eventos-contenedor {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .foto-evento {
+        width: 210px;
+        height: 280px;
+        margin: auto;
+      }
+
+      .foto-ceremonia {
+        order: 1;
+      }
+
+      .ceremonia {
+        order: 2;
+      }
+
+      .foto-recepcion {
+        order: 3;
+      }
+
+      .recepcion {
+        order: 4;
+      }
+
+      .evento {
+        padding-bottom: 45px;
+      }
+
+      .evento h2 {
+        font-size: 55px;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- ======================================
+       PORTADA
+  ======================================= -->
+
+  <section class="portada">
+
+    <div class="portada-contenido">
+
+      <p class="frase">
+        LA VIDA NOS CRUZÓ, DE UN MODO MUY CASUAL...
+      </p>
+
+      <h1 class="nombres">
+        Irma & Samuel
+      </h1>
+
+      <p class="fecha">
+        28 · 11 · 2026
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ======================================
+       BIENVENIDA
+  ======================================= -->
+
+  <section class="introduccion">
+
+    <h2 class="titulo-grande">
+      Nuestra boda
+    </h2>
+
+    <div class="linea"></div>
+
+    <p class="introduccion-texto">
+      Hay momentos en la vida que son especiales por sí solos,
+      pero compartirlos con las personas que queremos
+      los convierte en inolvidables.
+      <br><br>
+      Nos encantará compartir este día contigo.
+    </p>
+
+  </section>
+
+
+
+  <!-- ======================================
+       DETALLES DEL EVENTO
+  ======================================= -->
+
+  <section class="detalles">
+
+    <h2 class="titulo-grande">
+      Antes de la llegada
+    </h2>
+
+    <p class="detalles-intro">
+      Para disfrutar juntos de este día tan especial,
+      agradecemos tener en cuenta los siguientes detalles.
+    </p>
+
+    <div class="linea"></div>
+
+
+    <ul class="lista-detalles">
+
+      <li>
+        Código de vestimenta
+        <span class="detalle-pequeno">
+          Favor de no utilizar tonos lila ni grises.
+        </span>
+      </li>
+
+      <li>
+        Confirmación de asistencia
+        <span class="detalle-pequeno">
+          Agradeceríamos confirmes tu asistencia antes del 30 de septiembre.
+        </span>
+      </li>
+
+      <li>
+        Evento para adultos
+        <span class="detalle-pequeno">
+          Agradecemos su comprensión al no asistir con niños,
+          para mayor disfrute de los adultos.
+        </span>
+      </li>
+
+      <li>
+        Tu bebida favorita
+        <span class="detalle-pequeno">
+          Puedes llevar tu propio licor si deseas tomar.
+        </span>
+      </li>
+
+      <li>
+        Conserva tu invitación
+        <span class="detalle-pequeno">
+          Favor de conservar tu invitación para poder acceder al evento.
+        </span>
+      </li>
+
+      <li>
+        Disfruta con nosotros
+        <span class="detalle-pequeno">
+          ¡Diviértete y disfruta del evento!
+        </span>
+      </li>
+
+    </ul>
+
+  </section>
+
+
+
+  <!-- ======================================
+       CEREMONIA Y RECEPCIÓN
+  ======================================= -->
+
+  <section class="eventos">
+
+    <div class="eventos-contenedor">
+
+
+      <!-- FOTO CEREMONIA -->
+
+      <img
+        class="foto-evento foto-ceremonia"
+        src="ceremonia.JPG"
+        alt="Irma y Samuel"
+      >
+
+
+      <!-- CEREMONIA -->
+
+      <div class="evento ceremonia">
+
+        <h2>
+          Ceremonia
+        </h2>
+
+        <p class="hora">
+          4:00 PM
+        </p>
+
+        <p class="direccion">
+          Parroquia Sagrado Corazón de Jesús
+          <br>
+          Chapultepec 1273
+          <br>
+          Santa Lucía
+        </p>
+
+        <!-- AQUÍ PONDREMOS TU LINK DE GOOGLE MAPS -->
+
+        <a
+          class="mapa"
+          href="https://maps.google.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Mapa
+        </a>
+
+      </div>
+
+
+      <!-- RECEPCIÓN -->
+
+      <div class="evento recepcion">
+
+        <h2>
+          Recepción
+        </h2>
+
+        <p class="hora">
+          5:30 PM
+        </p>
+
+        <p class="direccion">
+          Terraza Palapa GLM
+          <br>
+          Te esperamos para celebrar juntos
+        </p>
+
+        <!-- AQUÍ PONDREMOS TU LINK DE GOOGLE MAPS -->
+
+        <a
+          class="mapa"
+          href="https://maps.google.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Mapa
+        </a>
+
+      </div>
+
+
+      <!-- FOTO RECEPCIÓN -->
+
+      <img
+        class="foto-evento foto-recepcion"
+        src="recepcion.JPG"
+        alt="Irma y Samuel"
+      >
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ======================================
+       MESA DE REGALOS
+  ======================================= -->
+
+  <section class="regalos">
+
+    <h2 class="titulo-grande">
+      Mesa de regalos
+    </h2>
+
+    <div class="linea"></div>
+
+    <p class="regalos-texto">
+      Tu presencia es nuestro mejor regalo.
+      <br><br>
+      Si deseas tener un detalle con nosotros,
+      hemos preparado una mesa de regalos en Liverpool.
+    </p>
+
+    <!-- AQUÍ PONDREMOS TU LINK DE LIVERPOOL -->
+
+    <a
+      class="boton-regalos"
+      href="https://www.liverpool.com.mx/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Ver mesa de regalos
+    </a>
+
+  </section>
+
+
+
+  <!-- ======================================
+       FINAL
+  ======================================= -->
+
+  <section class="final">
+
+    <div>
+
+      <h2>
+        Irma & Samuel
+      </h2>
+
+      <p>
+        28 · 11 · 2026
+      </p>
+
+    </div>
+
+  </section>
+
+
+</body>
+</html>
